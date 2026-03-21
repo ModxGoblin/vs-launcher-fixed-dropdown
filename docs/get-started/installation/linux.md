@@ -15,13 +15,13 @@ If you're using Arch Linux you can install it from AUR with `yay -S vs-launcher`
 
 {% stepper %}
 {% step %}
-#### Go to the [GitHub Releases Page](https://github.com/XurxoMF/vs-launcher/releases)
+**Go to the** [**GitHub Releases Page**](https://github.com/XurxoMF/vs-launcher/releases)
 
 On that page you'll see all the available versions to download.
 {% endstep %}
 
 {% step %}
-#### Download the Linux version
+**Download the Linux version**
 
 On the releases page, the first version is always the latest one. There you'll see a table with the different files to download. Just click on the Linux build as shown in the next image:
 
@@ -45,7 +45,7 @@ If you use any of this option just install it with double click or `flatpak inst
 {% endstep %}
 
 {% step %}
-#### Move the AppImage to an accesible location
+**Move the AppImage to an accesible location**
 
 For example the Desktop, the you'll be able to open it whenever you want.
 
@@ -55,7 +55,7 @@ Some users reported that AppImage Launcher is breaking automaitc updates so if y
 {% endstep %}
 
 {% step %}
-#### Add execution persmissions
+**Add execution persmissions**
 
 This should be done by default by sometimes you've to manually do it.
 
@@ -65,13 +65,13 @@ chmod +x ./vs-launcher-X.X.X.AppImage
 {% endstep %}
 
 {% step %}
-#### Open VS Launcher
+**Open VS Launcher**
 
 Double click the VS Launcher AppImage and that's it, ready to use!
 {% endstep %}
 
 {% step %}
-#### Install Dependencies
+**Install Dependencies**
 
 VS Launcher does not need any dependecy to work but Vintage Story does so follow the next steps.
 {% endstep %}
@@ -89,7 +89,7 @@ To help you with this process we've made a few guide explaining how to install e
 
 {% stepper %}
 {% step %}
-### Install .NET 7 and 8
+#### Install .NET 7, 8 and 10
 
 ```sh
 wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
@@ -106,16 +106,20 @@ sudo ./dotnet-install.sh --channel 7.0 --install-dir /usr/lib/dotnet
 ```sh
 sudo ./dotnet-install.sh --channel 8.0 --install-dir /usr/lib/dotnet
 ```
+
+```sh
+sudo ./dotnet-install.sh --channel 10.0 --install-dir /usr/lib/dotnet
+```
 {% endstep %}
 
 {% step %}
-### Install your graphics driver
+#### Install your graphics driver
 
 You'll have to look up how to do this for your graphics card and your Linux distribution as the combinations are almost endless!
 {% endstep %}
 
 {% step %}
-### Install OpenAL and mono-complete
+#### Install OpenAL and mono-complete
 
 ```sh
 sudo apt install libopenal-dev mono-complete
@@ -123,7 +127,7 @@ sudo apt install libopenal-dev mono-complete
 {% endstep %}
 
 {% step %}
-### Fix RAM limits
+#### Fix RAM limits
 
 ```sh
 sudo sysctl -w vm.max_map_count=262144
@@ -135,16 +139,16 @@ sudo sysctl -w vm.max_map_count=262144
 
 {% stepper %}
 {% step %}
-### Install your graphics driver
+#### Install your graphics driver
 
 You'll have to look up how to do this for your graphics card and your Linux distribution as the combinations are almost endless!
 {% endstep %}
 
 {% step %}
-### Install all the dependencies
+#### Install all the dependencies
 
 ```sh
-sudo pacman -S dotnet-runtime-7.0 dotnet-runtime-8.0 glibc openal opengl-driver mono
+sudo pacman -S dotnet-runtime-7.0 dotnet-runtime-8.0 dotnet-runtime glibc openal opengl-driver mono
 ```
 {% endstep %}
 {% endstepper %}
@@ -153,7 +157,7 @@ sudo pacman -S dotnet-runtime-7.0 dotnet-runtime-8.0 glibc openal opengl-driver 
 
 {% stepper %}
 {% step %}
-### Disable readonly mode
+#### Disable readonly mode
 
 SteamOS is protected so you can't make changes by accident. To install the dependencies you need to disable this:
 
@@ -163,7 +167,7 @@ sudo steamos-readonly disable
 {% endstep %}
 
 {% step %}
-### Configure pacman
+#### Configure pacman
 
 Sometimes you'll need to do some steps to configure everything:
 
@@ -175,15 +179,15 @@ sudo pacman-key --populate holo
 {% endstep %}
 
 {% step %}
-### Install all the dependencies
+#### Install all the dependencies
 
 ```sh
-sudo pacman -S dotnet-runtime-7.0 dotnet-runtime-8.0 glibc openal opengl-driver mono
+sudo pacman -S dotnet-runtime-7.0 dotnet-runtime-8.0 dotnet-runtime glibc openal opengl-driver mono
 ```
 {% endstep %}
 
 {% step %}
-### Enable readonly mode again
+#### Enable readonly mode again
 
 ```sh
 sudo steamos-readonly enable
@@ -199,7 +203,7 @@ This SteamOS guide was sent by an user that got it working with this. I don't kn
 
 {% stepper %}
 {% step %}
-### Enable appimages, and add dotnet as an extra package
+#### Enable appimages, and add dotnet as an extra package
 
 Appimages require a couple of options to be enabled in order to load, and they cannot see system libraries such as dotnet. Simply add this to your config to enable appimage support, and reveal the missing dotnet library:
 
@@ -211,7 +215,6 @@ Appimages require a couple of options to be enabled in order to load, and they c
   ]; };
 ```
 {% endstep %}
-
 {% endstepper %}
 
 {% hint style="info" %}
@@ -228,31 +231,31 @@ To restore the config you've to move the config file to the new location manuall
 
 {% stepper %}
 {% step %}
-### Find the old config file
+#### Find the old config file
 
 This one will be at `/home/username/.config/VSLauncher/config.json` and copy it or move it to a save location.
 {% endstep %}
 
 {% step %}
-### Open the Flatpak installed VS Launcher
+#### Open the Flatpak installed VS Launcher
 
 Open the VS Launcher copy you've installed using Flatpak and wait one or two seconds for it to generate the config file.
 {% endstep %}
 
 {% step %}
-### Go to the new config file location
+#### Go to the new config file location
 
 This one should be at `/home/username/.var/app/xyz.xurxomf.vslauncher/config/VSLauncher/config.json` . If it's not there go to the setting page on VS Launcher and you'll have the 3 default folders. Just copy one of them as seen on the next video and open it.
 {% endstep %}
 
 {% step %}
-### Replace the config.json with the old one.
+#### Replace the config.json with the old one.
 
 Just paste or move the old config file to the new location.
 {% endstep %}
 
 {% step %}
-### Restart VS Launcher
+#### Restart VS Launcher
 
 Close and open VS Launcher and magic, all your installations and versions are back!
 {% endstep %}

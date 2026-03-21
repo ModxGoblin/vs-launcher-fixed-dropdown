@@ -29,11 +29,15 @@ Double click the downloaded file and VS Launcher will be automátically installe
 {% endstep %}
 
 {% step %}
-### Install .NET 7
+### Install .NET 7, 8 and 10
 
-If you already played Vintage Story before this will be already installed so, you can skip this process. If you didn't played it before go to e next link to download .NET 7:
+If you already played Vintage Story before this will be already installed so, you can skip this process. If you didn't played it before go to e next link to download .NET 7, 8 and 10:
 
-[https://dotnet.microsoft.com/es-es/download/dotnet/thank-you/sdk-7.0.410-windows-x64-installer](https://dotnet.microsoft.com/es-es/download/dotnet/thank-you/sdk-7.0.410-windows-x64-installer)
+{% embed url="https://dotnet.microsoft.com/es-es/download/dotnet/thank-you/sdk-7.0.410-windows-x64-installer" %}
+
+{% embed url="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.419-windows-x64-installer" %}
+
+{% embed url="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-10.0.201-windows-x64-installer" %}
 
 Once the download is complete just install it.
 {% endstep %}
